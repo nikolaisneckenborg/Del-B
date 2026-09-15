@@ -6,13 +6,17 @@ class Course(string name, int maxSeats)
 
     public void Enroll(Student student)
     {
-        if (!students.Contains(student))
+        if (students.Contains(student))
         {
-            students.Add(student);
+            Console.WriteLine("Studenten är redan anmäld till kursen!");
+        }
+        else if(students.Count == MaxSeats)
+        {
+            Console.WriteLine("Kursen är full");
         }
         else
         {
-            Console.WriteLine("Studenten är redan anmäld till kursen!");
+            students.Add(student);
         }
     }
 }
