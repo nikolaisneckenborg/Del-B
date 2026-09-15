@@ -11,3 +11,6 @@ foreach(Course course in courses)
 {
     Console.WriteLine($"Course: {course.Name} - Seats: {course.MaxSeats}");
 }
+
+courses[0].Enroll(students[0]); // Första ska gå bra
+courses[0].Enroll(students[0]); // nästa ska ge felmeddelande
