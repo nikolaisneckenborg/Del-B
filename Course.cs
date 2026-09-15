@@ -19,6 +19,32 @@ class Course(string name, int maxSeats)
             students.Add(student);
         }
     }
+    public void Remove(Student student)
+    {
+        if (!students.Contains(student))
+        {
+            Console.WriteLine("Studenten är inte anmäld till kursen!");
+        }
+        else
+        {
+            students.Remove(student);
+        }
+    }
+    public void RollCall()
+    {
+        if (students.Count < 1)
+        {
+            Console.WriteLine("Inga studenter är anmälda!");
+        }
+        else
+        {
+            foreach(Student student in students)
+            {       
+                Console.WriteLine(student.Name);
+            }
+        }
+        
+    }
     public override string ToString()
     {
         return $"{Name} ({students.Count}/{MaxSeats} platser)";
