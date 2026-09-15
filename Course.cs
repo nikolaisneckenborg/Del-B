@@ -19,4 +19,8 @@ class Course(string name, int maxSeats)
             students.Add(student);
         }
     }
+    public override string ToString()
+    {
+        return $"{Name} ({students.Count}/{MaxSeats} platser)";
+    }
 }
