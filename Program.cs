@@ -34,8 +34,10 @@ courses[0].Remove(students[1]); // Ta bort Pelle
 courses[0].RollCall(); // Bara Kalle
 
 students[0].Schedule(); // Kalle är med i Math
+
 students[0].Join(courses[2]); 
 students[0].Schedule(); // Kalle är med I Math + Chemistry
+
 students[0].Leave(courses[1]);  // inte anmäld till kursen Biology
-students[0].Leave(courses[2]); 
-students[0].Schedule(); // inte anmält till några
+students[0].Leave(courses[2]);  // Kalle lämnar Chemistry
+students[0].Schedule(); // Kalle med i bara Math
