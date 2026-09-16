@@ -13,24 +13,24 @@ class Student(string name)
         }
         else if(course.students.Count == course.MaxSeats)
         {
-            Console.WriteLine("Kursen är full!");
+            Console.WriteLine($"{Name} är full!");
         }
         else
         {
             courses.Add(course);
-            course.Enroll(this);
+            course.students.Add(this);
         }
     }
     public void Leave(Course course)
     {
         if (!courses.Contains(course))
         {
-            Console.WriteLine($"{Name} är inte anmäld till kursen!");
+            Console.WriteLine($"{Name} är inte anmäld till {course.Name}!");
         }
         else
         {
             courses.Remove(course);
-            course.Remove(this);
+            course.students.Add(this);
         }
     }
 

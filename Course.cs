@@ -8,35 +8,35 @@ class Course(string name, int maxSeats)
     {
         if (students.Contains(student))
         {
-            Console.WriteLine("Studenten är redan anmäld till kursen!");
+            Console.WriteLine($"{student.Name} är redan anmäld till {Name}!");
         }
         else if(students.Count == MaxSeats)
         {
-            Console.WriteLine("Kursen är full");
+            Console.WriteLine($"{Name} är full");
         }
         else
         {
             students.Add(student);
-            student.Join(this);
+            student.courses.Add(this);
         }
     }
     public void Remove(Student student)
     {
         if (!students.Contains(student))
         {
-            Console.WriteLine("Studenten är inte anmäld till kursen!");
+            Console.WriteLine($"{student.Name} är inte anmäld till {Name}!");
         }
         else
         {
             students.Remove(student);
-            student.Leave(this);
+            student.courses.Add(this);
         }
     }
     public void RollCall()
     {
         if (students.Count < 1)
         {
-            Console.WriteLine("Inga studenter är anmälda!");
+            Console.WriteLine($"Inga studenter är anmälda tiil {Name}!");
         }
         else
         {
