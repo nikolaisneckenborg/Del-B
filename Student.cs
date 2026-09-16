@@ -9,7 +9,7 @@ class Student(string name)
     {
         if (courses.Contains(course))
         {
-            Console.WriteLine("Studenten är redan anmäld till kursen!");
+            
         }
         else if(course.students.Count == course.MaxSeats)
         {
@@ -18,6 +18,19 @@ class Student(string name)
         else
         {
             courses.Add(course);
+            course.Enroll(this);
+        }
+    }
+    public void Leave(Course course)
+    {
+        if (!courses.Contains(course))
+        {
+            Console.WriteLine($"{Name} är inte anmäld till kursen!");
+        }
+        else
+        {
+            courses.Remove(course);
+            course.Remove(this);
         }
     }
 
@@ -34,6 +47,10 @@ class Student(string name)
                 Console.WriteLine(course.Name);
             }
         }
+    }
+    public override string ToString()
+    {
+        return Name;
     }
 
 }

@@ -30,3 +30,6 @@ courses[0].RollCall(); // Bara Kalle
 students[0].Schedule(); // Kalle är inte anmäld
 students[0].Join(courses[2]); 
 students[0].Schedule(); // Chemistry
+students[0].Leave(courses[1]);  // inte anmäld till kurseen
+students[0].Leave(courses[2]); 
+students[0].Schedule(); // inte anmält till några

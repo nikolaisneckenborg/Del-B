@@ -17,6 +17,7 @@ class Course(string name, int maxSeats)
         else
         {
             students.Add(student);
+            student.Join(this);
         }
     }
     public void Remove(Student student)
@@ -28,6 +29,7 @@ class Course(string name, int maxSeats)
         else
         {
             students.Remove(student);
+            student.Leave(this);
         }
     }
     public void RollCall()
