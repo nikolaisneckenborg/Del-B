@@ -23,4 +23,10 @@ Console.WriteLine(courses[0].ToString());
 courses[0].Enroll(students[2]); // Nu ska kursen ge felmeddelanda att den är full
 Console.WriteLine(courses[0].ToString());
 
-courses[0].RollCall();
+courses[0].RollCall(); // Kalle + Pelle
+courses[0].Remove(students[1]);
+courses[0].RollCall(); // Bara Kalle
+
+students[0].Schedule(); // Kalle är inte anmäld
+students[0].Join(courses[2]); 
+students[0].Schedule(); // Chemistry
