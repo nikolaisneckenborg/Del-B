@@ -31,6 +31,7 @@ Console.WriteLine(courses[0].ToString()); // Math 2/2
 
 courses[0].RollCall(); // Kalle + Pelle
 courses[0].Remove(students[1]); // Ta bort Pelle
+students[1].Schedule(); // ny check som visar att den nya remove tagit bort Pelle bort från student också
 courses[0].RollCall(); // Bara Kalle
 
 students[0].Schedule(); // Kalle är med i Math
@@ -39,5 +40,7 @@ students[0].Join(courses[2]);
 students[0].Schedule(); // Kalle är med I Math + Chemistry
 
 students[0].Leave(courses[1]);  // inte anmäld till kursen Biology
+courses[0].RollCall(); // ny check som visar att Kalle är med i Chemistry
 students[0].Leave(courses[2]);  // Kalle lämnar Chemistry
+courses[0].RollCall(); // ny check som visar att Kalle tagits bort i courses med.
 students[0].Schedule(); // Kalle med i bara Math
