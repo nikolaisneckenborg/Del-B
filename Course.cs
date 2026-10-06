@@ -29,7 +29,7 @@ class Course(string name, int maxSeats)
         else
         {
             students.Remove(student);
-            student.courses.Add(this);
+            student.courses.Remove(this);
         }
     }
     public void RollCall()

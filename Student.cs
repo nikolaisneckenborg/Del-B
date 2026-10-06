@@ -30,7 +30,7 @@ class Student(string name)
         else
         {
             courses.Remove(course);
-            course.students.Add(this);
+            course.students.Remove(this);
         }
     }
 
